@@ -61,7 +61,7 @@
 
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
-            <a href="index.html" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <h2 class="m-0 text-primary">
                     <img src="{{ asset('profil/img/logo.jpeg') }}" style="width: 60px;">
                     {{-- <i class="fa fa-book-reader me-3"></i> --}}
