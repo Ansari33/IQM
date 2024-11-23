@@ -78,7 +78,7 @@
                     <a href="#about" class="nav-item nav-link">Visi & Misi</a>
                     <a href="#classes" class="nav-item nav-link">Program</a>
                     <a href="#teachers" class="nav-item nav-link">Pengelola</a>
-                    <a href="/blogs" class="nav-item nav-link">Kegiatan</a>
+                    <a href="repo.sit-iqm.my.id/blogs" class="nav-item nav-link">Kegiatan</a>
                     {{-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
