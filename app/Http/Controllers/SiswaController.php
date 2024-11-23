@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Str;
 use DB;
 use Excel;
-
+use App\Imports\SiswaImport;
 class SiswaController extends Controller
 {
     //
@@ -236,7 +236,7 @@ class SiswaController extends Controller
 
         $data = Siswa::get()->toArray();
         $myData = [];
-        $myData[] = ["Nama", "NIS","NISN", "Jenis Kelamin", "Tempat Lahir", "Tanggal Lahir", "Ayah","Ibu", "Kontak Wali", "Status", "Tahun Masuk"];
+        $myData[] = ["Nama", "NIS","NISN", "Jenis Kelamin", "Tempat Lahir", "Tanggal Lahir('tahun-bulan-tanggal')", "Ayah","Ibu", "Kontak Wali", "Status","Desa","Kecamatan","Alamat", "Tahun Masuk"];
         foreach ($data as $key => $value) {
             $myData[] = [
                 $value['nama'],
@@ -249,9 +249,27 @@ class SiswaController extends Controller
                 $value['ibu'],
                 $value['kontak_wali'],
                 $value['status'],
+                $value['desa'],
+                $value['kecamatan'],
+                $value['alamat'],
                 $value['tahun_masuk'],
             ];
         }
         return Excel::download(new \App\Exports\MyExport($myData), 'Siswa.xlsx');
+    }
+
+    public function upload()
+    {
+        return view('siswa.upload');
+    }
+
+    function simpanUpload(Request $request) {
+        try {
+            Excel::import(new SiswaImport, request()->file('fname'));
+            return redirect('/siswa')->with('berhasil','Mengupload!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('gagal',$e->getMessage());
+        }
+       
     }
 }

@@ -120,6 +120,8 @@ Route::group(['middleware' => ['checklogin','checkakses']],function () {
         Route::post('/update', [SiswaController::class,'update']);
         Route::get('/hapus/{i}', [SiswaController::class,'hapus']);
         Route::get('/export', [SiswaController::class,'export']);
+        Route::get('/upload', [SiswaController::class,'upload']);
+        Route::post('/upload', [SiswaController::class,'simpanUpload']);
     });
     
     Route::prefix('kelas')->group(function () {

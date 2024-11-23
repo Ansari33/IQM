@@ -11,13 +11,15 @@
     <meta name="description"
         content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>IQM - Data Peserta Didik</title>
+    <title>IQM - Upload Data Peserta Didik</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png ') }}">
     <!-- Custom CSS -->
-    <link href="{{ asset('assets/libs/flot/css/float-chart.css ') }}" rel="stylesheet">
+    <link href="{{ asset('assets/libs/flot/css/float-chart.css ') }}"  rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/select2/dist/css/select2.min.css ') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css ') }}">
     <!-- Custom CSS -->
-    <link href="{{ asset('dist/css/style.min.css ') }}" rel="stylesheet">
+    <link href="{{ asset('dist/css/style.min.css ') }}"  rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,7 +49,7 @@
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
-
+                    
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
@@ -236,13 +238,13 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Data Siswa</h4>
+                        <h4 class="page-title">Upload Data Siswa</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
-                                {{-- <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
-                                </ol> --}}
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/siswa">Siswa</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Upload</li>
+                                </ol>
                             </nav>
                         </div>
                     </div>
@@ -255,8 +257,12 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-
-
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                
+                <!-- ============================================================== -->
+                
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Recent comment and chats -->
@@ -264,123 +270,37 @@
                 <div class="row">
                     <!-- column -->
                     <div class="col-lg-12">
-                        <div class="card">
-                            @if (session('berhasil'))
-                                <div class="alert alert-success" role="alert">
-                                    <h4 class="alert-heading">Berhasil!</h4>
-
-                                    <p class="mb-0">Data Siswa Berhasil {{ session('berhasil') }}.</p>
-                                </div>
-                            @elseif (session('gagal'))
-                                <div class="alert alert-danger" role="alert">
-                                    <h4 class="alert-heading">Gagal!</h4>
-
-                                    <p class="mb-0">Data Siswa Gagal {{ session('gagal') }}.</p>
-                                </div>
-                            @elseif (session('error'))
-                                <div class="alert alert-danger" role="alert">
-                                    <h4 class="alert-heading">Error!</h4>
-
-                                    <p class="mb-0">{{ session('error') }}.</p>
-                                </div>
+                            @if (session('gagal'))
+                            <div class="alert alert-danger" role="alert">
+                                <h4 class="alert-heading">Gagal!</h4>
+                                
+                                <p class="mb-0">Data Siswa Gagal {{ session('gagal') }}.</p>
+                            </div>
                             @endif
-                            <div class="card-body">
-                                <div class="row mb-3">
-                                    <div class="col-lg-10">
-                                        <h5 class="card-title">Tabel Data Siswa</h5>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <a href="/siswa/tambah" class="btn btn-success btn-sm text-white"><i
-                                                class="fa fa-plus"> </i></a>
-                                        <a target="_blank" href="/siswa/export"
-                                            class="btn btn-outline-success btn-sm "><i class="fa fa-download"> </i></a>
-                                        <a href="/siswa/upload"
-                                        class="btn btn-outline-primary btn-sm "><i class="fa fa-upload"> </i></a>
-                                        
-                                    </div>
-                                </div>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ...
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
+                        <div class="card">
+                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="/siswa/upload">
+                                @csrf
+                                <div class="card-body">
+                                    <h4 class="card-title">Upload Data Siswa</h4>
+                               
+                                    <div class="form-group row">
+                                        <label class="col-md-2  text-end control-label col-form-label">File (File Excel)</label>
+                                        <div class="col-md-9">  
+                                            <input type="file" class="form-control" id="fname"
+                                                placeholder="" name="fname" accept=".xls,.xlsx">
                                         </div>
                                     </div>
+                                    
                                 </div>
-
-                                <div class="table-responsive">
-                                    <table id="zero_config" class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>NIS</th>
-                                                <th>NISN</th>
-                                                <th>Tempat Tanggal Lahir</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>Ayah</th>
-                                                <th>Kontak</th>
-                                                <th>Status</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td> {{ $item['nama'] }} </td>
-                                                    <td> {{ $item['nis'] }} </td>
-                                                    <td> {{ $item['nisn'] }} </td>
-                                                    <td> {{ $item['tempat_lahir'] . ', ' . $item['tanggal_lahir'] }} </td>
-                                                    <td> {{ $item['kelamin'] }} </td>
-                                                    <td> {{ $item['wali'] }} </td>
-                                                    <td> {{ $item['kontak_wali'] }} </td>
-                                                    <td> {{ in_array($item['id'], $alumni) ? 'Lulus' : '-' }} </td>
-                                                    <td>
-                                                        <a href="/siswa/edit/{{ $item['uid'] }}" type="button"
-                                                            class="btn btn-cyan btn-sm text-white">Edit</a>
-
-                                                        <a href="javascript:void(0)" type="button"
-                                                            class="btn btn-danger btn-sm text-white"
-                                                            onclick="return confirm('Hapus Data Siswa Ini?') ? window.location.href= '/siswa/hapus/{{ $item['uid'] }}' : false ">Hapus</a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>NIS</th>
-                                                <th>NISN</th>
-                                                <th>Tempat Tanggal Lahir</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>Ayah</th>
-                                                <th>Kontak</th>
-                                                <th>Status</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
                                 </div>
-
-                            </div>
+                            </form>
                         </div>
                     </div>
-
+                    
                 </div>
                 <!-- ============================================================== -->
                 <!-- Recent comment and chats -->
@@ -393,8 +313,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                Developed by SIT Insan Qur'ani Mulia Bima, Template by <a
-                    href="https://www.wrappixel.com">WrapPixel</a>
+                Developed by SIT Insan Qur'ani Mulia Bima, Template  by <a href="https://www.wrappixel.com">WrapPixel</a> 
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -408,13 +327,17 @@
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    @include('jquery')
-    <script src="{{ asset('assets/extra-libs/DataTables/datatables.min.js') }}"></script>
+   @include('jquery')
+   <script src="{{ asset('assets/libs/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/select2/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
     <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('#zero_config').DataTable();
+         $(".select2").select2();
+         jQuery('.mydatepicker').datepicker();
+         jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
     </script>
 
 </body>
