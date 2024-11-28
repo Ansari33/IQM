@@ -347,7 +347,7 @@
                                                     <td> {{ $item['nisn'] }} </td>
                                                     <td> {{ $item['tempat_lahir'] . ', ' . $item['tanggal_lahir'] }} </td>
                                                     <td> {{ $item['kelamin'] }} </td>
-                                                    <td> {{ $item['wali'] }} </td>
+                                                    <td> {{ $item['ayah'] }} </td>
                                                     <td> {{ $item['kontak_wali'] }} </td>
                                                     <td> {{ in_array($item['id'], $alumni) ? 'Lulus' : '-' }} </td>
                                                     <td>
