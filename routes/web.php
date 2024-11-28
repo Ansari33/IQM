@@ -35,7 +35,7 @@ use App\Http\Controllers\RaporTasmiController;
 
 #use Session;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -299,6 +299,8 @@ Route::group(['middleware' => ['checklogin','checkakses']],function () {
         Route::get('/edit/{i}', [UstadzahController::class,'edit']);
         Route::post('/update', [UstadzahController::class,'update']);
         Route::get('/hapus/{i}', [UstadzahController::class,'hapus']);
+        Route::get('/upload', [UstadzahController::class,'upload']);
+        Route::post('/upload', [UstadzahController::class,'simpanUpload']);
     });
     
     Route::prefix('spp')->group(function () {
@@ -402,6 +404,8 @@ Route::group(['middleware' => ['checklogin','checkakses']],function () {
         // Route::get('/hapus/{i}', [PenjualanController::class,'hapus']);
     });
 });
+
+
 
 
 

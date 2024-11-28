@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Ustadzah;
-#use App\Models\Merk;
-//use App\Models\Jenis;
-use Carbon\Carbon;
 use DB;
+use Excel;
+use App\Imports\UstadzahImport;
 
 class UstadzahController extends Controller
 {
@@ -197,4 +196,19 @@ class UstadzahController extends Controller
          }
  
      }
+
+    public function upload()
+    {
+        return view('ustadzah.upload');
+    }
+ 
+    public function simpanUpload(Request $request) {
+        try {
+            Excel::import(new UstadzahImport, request()->file('fname'));
+            return redirect('/ustadzah')->with('berhasil','Mengupload!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('gagal',$e->getMessage());
+        }
+       
+    }
 }

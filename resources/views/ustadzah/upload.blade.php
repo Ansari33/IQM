@@ -11,11 +11,13 @@
     <meta name="description"
         content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>IQM - Data Ustazah</title>
+    <title>IQM - Upload Data Peserta Didik</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png ') }}">
     <!-- Custom CSS -->
     <link href="{{ asset('assets/libs/flot/css/float-chart.css ') }}"  rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/select2/dist/css/select2.min.css ') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css ') }}">
     <!-- Custom CSS -->
     <link href="{{ asset('dist/css/style.min.css ') }}"  rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -236,12 +238,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Data Guru</h4>
+                        <h4 class="page-title">Upload Data Siswa</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Data Guru</li>
+                                    <li class="breadcrumb-item"><a href="/Ustadzah">Guru</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Upload</li>
                                 </ol>
                             </nav>
                         </div>
@@ -258,100 +260,7 @@
                 <!-- ============================================================== -->
                 <!-- Sales Cards  -->
                 <!-- ============================================================== -->
-                {{-- <div class="row">
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                                <h6 class="text-white">Dashboard</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                                <h6 class="text-white">Charts</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
-                                <h6 class="text-white">Widgets</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Tables</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
-                                <h6 class="text-white">Full Width</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                                <h6 class="text-white">Forms</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                                <h6 class="text-white">Buttons</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                                <h6 class="text-white">Elements</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
-                                <h6 class="text-white">Calnedar</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                                <h6 class="text-white">Errors</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div> --}}
+                
                 <!-- ============================================================== -->
                 
                 <!-- ============================================================== -->
@@ -361,83 +270,34 @@
                 <div class="row">
                     <!-- column -->
                     <div class="col-lg-12">
-                        <div class="card">
-                            @if (session('berhasil'))
-                            <div class="alert alert-success" role="alert">
-                                <h4 class="alert-heading">Berhasil!</h4>
-                                
-                                <p class="mb-0">Data Ustadzah Berhasil {{ session('berhasil') }}.</p>
-                            </div>
-                            @elseif (session('gagal'))
+                            @if (session('gagal'))
                             <div class="alert alert-danger" role="alert">
                                 <h4 class="alert-heading">Gagal!</h4>
                                 
-                                <p class="mb-0">Data Ustadzah Gagal {{ session('gagal') }}.</p>
-                            </div>
-                            @elseif (session('error'))
-                            <div class="alert alert-danger" role="alert">
-                                <h4 class="alert-heading">Error!</h4>
-                                
-                                <p class="mb-0">{{ session('error') }}.</p>
+                                <p class="mb-0">Data Siswa Gagal {{ session('gagal') }}.</p>
                             </div>
                             @endif
-                            <div class="card-body">
-                                <div class="row mb-3">
-                                    <div class="col-lg-11">
-                                        <h5 class="card-title">Tabel Data Ustadzah</h5>
+                        <div class="card">
+                            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="/ustadzah/upload">
+                                @csrf
+                                <div class="card-body">
+                                    <h4 class="card-title">Upload Data Guru</h4>
+                               
+                                    <div class="form-group row">
+                                        <label class="col-md-2  text-end control-label col-form-label">File (File Excel)</label>
+                                        <div class="col-md-9">  
+                                            <input type="file" class="form-control" id="fname"
+                                                placeholder="" name="fname" accept=".xls,.xlsx">
+                                        </div>
                                     </div>
-                                    <div class="col-lg-1">
-                                        <a href="/ustadzah/tambah" class="btn btn-success btn-sm text-white"><i class="fa fa-plus"> </i></a>
-                                        <a  href="/ustadzah/upload" class="btn btn-primary btn-sm text-white"><i class="fa fa-upload"> </i></a>
+                                    
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
-                                
-                                <div class="table-responsive">
-                                    <table id="zero_config" class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>Kontak</th>
-                                                <th>Lulusan</th>
-                                                <th>Jurusan</th>
-                                                <th>Alamat</th>
-                                                <th>SK</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($data as $item)
-                                            <tr>
-                                                <td> {{ $item['nama'] }} </td>
-                                                <td> {{ $item['kontak'] }} </td>
-                                                <td> {{ $item['lulusan'] }} </td>
-                                                <td> {{ $item['jurusan'] }} </td>
-                                                <td> {{ $item['alamat'] }} </td>
-                                                <td>
-                                                    <a href="/sk-ustadzah/{{ $item['sk']}}" type="button" class="btn btn-info btn-sm text-white"><i class="fa fa-download"></i></a>
-                                                </td>
-                                                <td>
-                                                    <a href="/ustadzah/edit/{{ $item['id']}}" type="button" class="btn btn-cyan btn-sm text-white">Edit</a>
-                                                    
-                                                    <a href="/ustadzah/hapus/{{ $item['id'] }}" type="button" class="btn btn-danger btn-sm text-white" onclick="return confirm('Hapus Data Siswa Ini?')">Hapus</a>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>Kontak</th>
-                                                <th>Lulusan</th>
-                                                <th>Jurusan</th>
-                                                <th>Alamat</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
-
-                            </div>
+                            </form>
                         </div>
                     </div>
                     
@@ -468,12 +328,16 @@
     <!-- ============================================================== -->
     <!-- ============================================================== -->
    @include('jquery')
-   <script src="{{ asset('assets/extra-libs/DataTables/datatables.min.js') }}"></script>
+   <script src="{{ asset('assets/libs/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/select2/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
     <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('#zero_config').DataTable();
+         $(".select2").select2();
+         jQuery('.mydatepicker').datepicker();
+         jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
     </script>
 
 </body>
