@@ -301,6 +301,7 @@ Route::group(['middleware' => ['checklogin','checkakses']],function () {
         Route::get('/hapus/{i}', [UstadzahController::class,'hapus']);
         Route::get('/upload', [UstadzahController::class,'upload']);
         Route::post('/upload', [UstadzahController::class,'simpanUpload']);
+        Route::get('/export', [UstadzahController::class,'export']);
     });
     
     Route::prefix('spp')->group(function () {

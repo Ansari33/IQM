@@ -195,7 +195,35 @@ class UstadzahController extends Controller
              return redirect()->back()->with('berhasil','Berhasil!');
          }
  
-     }
+    }
+
+    public function export()
+    {
+
+        $data = Ustadzah::get()->toArray();
+        $pendidikan = [
+            '1' => 'SMA/SMK',
+            '2' => 'S1',
+            '3' => 'S2',
+            '4' => 'S3',
+        ];
+        $myData = [];
+        $myData[] = ["Nama", "Tempat Lahir","Tanggal Lahir", "Jenis Kelamin", "Jabatan", "Pendidikan", "Kampus","Kontak" ];
+        foreach ($data as $key => $value) {
+            $myData[] = [
+                $value['nama'],
+                $value['tempat_lahir'],
+                $value['tanggal_lahir'],
+                $value['kelamin'],
+                //$value['jabatan'],
+                null,
+                $pendidikan[$value['pendidikan_akhir']],
+                $value['lulusan'],
+                $value['kontak'],
+            ];
+        }
+        return Excel::download(new \App\Exports\MyExport($myData), 'Ustadzah.xlsx');
+    }
 
     public function upload()
     {

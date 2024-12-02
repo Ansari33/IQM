@@ -383,12 +383,13 @@
                             @endif
                             <div class="card-body">
                                 <div class="row mb-3">
-                                    <div class="col-lg-11">
+                                    <div class="col-lg-10">
                                         <h5 class="card-title">Tabel Data Ustadzah</h5>
                                     </div>
-                                    <div class="col-lg-1">
+                                    <div class="col-lg-2">
                                         <a href="/ustadzah/tambah" class="btn btn-success btn-sm text-white"><i class="fa fa-plus"> </i></a>
                                         <a  href="/ustadzah/upload" class="btn btn-primary btn-sm text-white"><i class="fa fa-upload"> </i></a>
+                                        <a  href="/ustadzah/export" class="btn btn-outline-success btn-sm "><i class="fa fa-download"> </i></a>
                                     </div>
                                 </div>
                                 
