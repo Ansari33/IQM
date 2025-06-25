@@ -47,7 +47,9 @@ use Carbon\Carbon;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/absen/qr', function(){
+    return view('absensi.guru.absen');
+});
 Route::prefix('login')->group(function () {
     Route::get('/', function () { 
         if (Session::get('auth')) {
