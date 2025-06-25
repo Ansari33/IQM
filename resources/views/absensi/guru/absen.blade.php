@@ -31,9 +31,9 @@
     // membaca suatu QR Code
     function onScanSuccess(decodedText, decodedResult) {
         // redirect ke link hasil scan
-        window.location.href = decodedResult.decodedText;
+       // window.location.href = decodedResult.decodedText;
 
-        alert(decodedResult)
+        alert(decodedResult.decodedText)
         // membersihkan scan area ketika sudah menjalankan 
         // action diatas
         html5QRCodeScanner.clear();

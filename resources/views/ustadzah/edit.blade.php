@@ -533,6 +533,17 @@
                                             <a href="/sk-ustadzah/{{ $data['sk']}}" class="btn btn-outline-info"><i class="fa fa-download"></i> </a>
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2  text-end control-label col-form-label">SK Guru (pdf, png)</label>
+                                        <div class="col-md-9">  
+                                            <input type="file" class="form-control" id="fname"
+                                                placeholder="" name="sk" accept=".pdf,.png">
+                                        </div>
+                                        <div class="col-md-1">  
+                                            <a href="/sk-ustadzah/{{ $data['sk']}}" class="btn btn-outline-info"><i class="fa fa-download"></i> </a>
+                                        </div>
+                                    </div>
+                                    {{ QrCode::size(100)->generate($data['uid']); }}
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">

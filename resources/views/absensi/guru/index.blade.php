@@ -433,6 +433,7 @@
                                                 <th>Guru</th>
                                                 <th>Status</th>
                                                 <th>Keterlambatan</th>
+                                                <th>SK</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </tfoot>
