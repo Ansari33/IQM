@@ -33,6 +33,7 @@
         // redirect ke link hasil scan
         window.location.href = decodedResult.decodedText;
 
+        alert(decodedResult)
         // membersihkan scan area ketika sudah menjalankan 
         // action diatas
         html5QRCodeScanner.clear();
