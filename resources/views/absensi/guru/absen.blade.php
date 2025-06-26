@@ -8,10 +8,6 @@
 <body>
     // container HTML untuk scanner QR Code
 <div id="reader"></div>
-.
-.
-.
-//sesuaikan dengan di folder mana teman-teman menaruh file js HTML5-QRCode
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     // inisiasi html5QRCodeScanner
