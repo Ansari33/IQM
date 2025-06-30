@@ -57,7 +57,7 @@
                                     <div class="form-group">
                                         {{-- <div class="pt-"> --}}
                                             {{-- <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock me-1"></i> Lost password?</button> --}}
-                                            <button class="btn btn-success  text-white" type="submit" style="width: 200px; "> <span id="status">Silahkan Scanning...</span> </button>
+                                            <button class="btn btn-success  text-white" type="submit" style="width: 200px; "> <span id="status">Silahkan Scan QrCode</span> </button>
                                         {{-- </div> --}}
                                     </div>
                                 </div>
@@ -139,19 +139,19 @@
         
         // membersihkan scan area ketika sudah menjalankan 
         // action diatas
-       // html5QRCodeScanner.clear();
-      $('#status').text('')
+        html5QRCodeScanner.clear();
        $.ajax({
             url: "/absen/masuk/"+decodedResult.decodedText,
             success:function(res){
                 
-                res.status ? html5QRCodeScanner.clear() : html5QRCodeScanner.render(onScanSuccess);
-                $('#status').text(res.message)
+                alert(res.message)
+                html5QRCodeScanner.render(onScanSuccess);
             },
             error:function(err) {
                 console.log(err)
             }
         })
+        
         
     }
 
