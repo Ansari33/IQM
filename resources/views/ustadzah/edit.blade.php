@@ -388,6 +388,9 @@
                                             <input type="text" class="form-control" id="fname"
                                                 placeholder="" name="nama" value="{{ $data['nama'] }}">
                                         </div>
+                                        <div class="col-md-1">  
+                                            <a href="/ustadzah/card/{{ $data['id']}}" class="btn btn-outline-info" title="QR Codex"><i class="fa fa-qrcode"></i> </a>
+                                        </div>
                                     </div>
                                     {{-- <div class="form-group row">
                                         <label for="fname"

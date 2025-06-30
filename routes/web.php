@@ -53,7 +53,7 @@ Route::get('/absen', function(){
 Route::get('/absen/qr', function(){
     return view('absensi.guru.absen');
 });
-Route::get('/absen/masuk', [AbsensiGuruController::class,'masuk']);
+Route::get('/absen/masuk/{id}', [AbsensiGuruController::class,'masuk']);
 Route::prefix('login')->group(function () {
     Route::get('/', function () { 
         if (Session::get('auth')) {

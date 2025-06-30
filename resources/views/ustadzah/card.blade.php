@@ -138,7 +138,7 @@ p {
 			</div>
             <br>
 			<div class="photo">
-				{{ QrCode::size(70)->generate($data['id']) }}
+				{{ QrCode::size(70)->generate($data['uid']) }}
 			</div>
 			<h2>{{ $data['nama'] }}</h2>
 			<div class="qr-code">

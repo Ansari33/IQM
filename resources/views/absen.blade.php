@@ -52,37 +52,19 @@
                             <br>
                             
                         </div>
-                        <!-- Form -->
-                         <div id="reader"></div>
-                        <form class="form-horizontal mt-12" method="POST" id="loginform" action="login/auth" style="margin: 10% ;margin-left: 13%; margin-right: 13%">
-                          @CSRF
-                            <div class="row pb-12">
-                                <div class="col-12">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text bg-success text-white h-100" id="basic-addon1"><i class="ti-user"></i></span>
-                                        </div>
-                                        <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required="" style="width: 150px;">
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text bg-warning text-white h-100" id="basic-addon2"><i class="ti-pencil"></i></span>
-                                        </div>
-                                        <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row  ">
+                        <div class="row  ">
                                 <div class="col-12">
                                     <div class="form-group">
                                         {{-- <div class="pt-"> --}}
                                             {{-- <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock me-1"></i> Lost password?</button> --}}
-                                            <button class="btn btn-success  text-white" type="submit" style="width: 100px; ">Login</button>
+                                            <button class="btn btn-success  text-white" type="submit" style="width: 200px; "> <span id="status">Silahkan Scanning...</span> </button>
                                         {{-- </div> --}}
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        <!-- Form -->
+                         <div id="reader"></div>
+                        
                     </div>
                     <!--  -->
                 </div>
@@ -140,8 +122,8 @@
         "reader", {
             fps: 10,
             qrbox: {
-                width: 200,
-                height: 200,
+                width: 250,
+                height: 250,
             },
         }
     );
@@ -152,20 +134,25 @@
         // redirect ke link hasil scan
        // window.location.href = decodedResult.decodedText;
 
-        alert(decodedResult.decodedText)
+        //alert(decodedResult.decodedText)
+        console.log(decodedResult.decodedText)
+        
         // membersihkan scan area ketika sudah menjalankan 
         // action diatas
        // html5QRCodeScanner.clear();
-
-      
+      $('#status').text('')
        $.ajax({
-        method: "POST",
-        url: "/absen/masuk",
-        data: { id: decodedResult.decodedText}
+            url: "/absen/masuk/"+decodedResult.decodedText,
+            success:function(res){
+                
+                res.status ? html5QRCodeScanner.clear() : html5QRCodeScanner.render(onScanSuccess);
+                $('#status').text(res.message)
+            },
+            error:function(err) {
+                console.log(err)
+            }
         })
-        .done(function( msg ) {
-            alert( "Data Saved: " + msg );
-        });
+        
     }
 
     // render qr code scannernya

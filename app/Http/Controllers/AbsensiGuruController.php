@@ -107,16 +107,22 @@ class AbsensiGuruController extends Controller
 
     public function masuk($id){
     
-        $result = Ustadzah::find($id);
+        $result = Ustadzah::where('uid',$id)->first();
         if ($result) {
             AbsensiGuru::create([
-                'ustadzah_id' => $id,
+                'ustadzah_id' => $result->id,
                 'jam' => date('H:i'),
                 'tanggal' => date('Y-m-d')
             ]);
-            return 'Absensi Berhasil!';
+            return response()->json([
+                'status' => true,
+                'message' => 'Absensi Berhasil!'
+            ]);
         }else{
-            return 'Data Tidak Ditemukan!';
+            return response()->json([
+                'status' => false,
+                'message' => 'Data Tidak Ditemukan!'
+            ]);
         }
 
     }
