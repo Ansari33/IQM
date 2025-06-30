@@ -104,4 +104,20 @@ class AbsensiGuruController extends Controller
          }
  
      }
+
+    public function masuk($id){
+    
+        $result = Ustadzah::find($id);
+        if ($result) {
+            AbsensiGuru::create([
+                'ustadzah_id' => $id,
+                'jam' => date('H:i'),
+                'tanggal' => date('Y-m-d')
+            ]);
+            return 'Absensi Berhasil!';
+        }else{
+            return 'Data Tidak Ditemukan!';
+        }
+
+    }
 }

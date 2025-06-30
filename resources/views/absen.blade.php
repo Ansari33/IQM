@@ -130,6 +130,7 @@
         $("#loginform").fadeIn();
     });
     </script>
+        <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js ') }}" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     // inisiasi html5QRCodeScanner
@@ -139,8 +140,8 @@
         "reader", {
             fps: 10,
             qrbox: {
-                width: 600,
-                height: 600,
+                width: 200,
+                height: 200,
             },
         }
     );
@@ -154,11 +155,23 @@
         alert(decodedResult.decodedText)
         // membersihkan scan area ketika sudah menjalankan 
         // action diatas
-        html5QRCodeScanner.clear();
+       // html5QRCodeScanner.clear();
+
+      
+       $.ajax({
+        method: "POST",
+        url: "/absen/masuk",
+        data: { id: decodedResult.decodedText}
+        })
+        .done(function( msg ) {
+            alert( "Data Saved: " + msg );
+        });
     }
 
     // render qr code scannernya
     html5QRCodeScanner.render(onScanSuccess);
+
+    
 </script>
 
 </body>
