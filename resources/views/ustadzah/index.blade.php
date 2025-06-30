@@ -432,6 +432,7 @@
                                                 <th>Lulusan</th>
                                                 <th>Jurusan</th>
                                                 <th>Alamat</th>
+                                                <th>SK</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </tfoot>

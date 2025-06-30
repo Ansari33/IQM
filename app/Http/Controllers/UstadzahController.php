@@ -239,4 +239,9 @@ class UstadzahController extends Controller
         }
        
     }
+
+    function card($id){
+        $data = Ustadzah::find($id);
+     return view('ustadzah.card',compact('data'));   
+    }
 }

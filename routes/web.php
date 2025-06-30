@@ -47,6 +47,9 @@ use Carbon\Carbon;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/absen', function(){
+    return view('absen');
+});
 Route::get('/absen/qr', function(){
     return view('absensi.guru.absen');
 });
@@ -304,6 +307,7 @@ Route::group(['middleware' => ['checklogin','checkakses']],function () {
         Route::get('/upload', [UstadzahController::class,'upload']);
         Route::post('/upload', [UstadzahController::class,'simpanUpload']);
         Route::get('/export', [UstadzahController::class,'export']);
+        Route::get('/card/{i}', [UstadzahController::class,'card']);
     });
     
     Route::prefix('spp')->group(function () {
