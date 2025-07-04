@@ -149,6 +149,7 @@
             },
             error:function(err) {
                 console.log(err)
+                html5QRCodeScanner.render(onScanSuccess);
             }
         })
         
