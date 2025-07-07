@@ -69,9 +69,7 @@ Route::prefix('login')->group(function () {
         return redirect('/dashboard');
     });
 });
-Route::get('/', function () { 
-    return view('profile.index'); 
-});
+Route::get('/', [BlogController::class,'index']);
 Route::get('/blogs', [BlogController::class,'client']);
 Route::get('/blogs/view/{j}', [BlogController::class,'view']);
 Route::prefix('blog')->group(function () {
@@ -85,7 +83,6 @@ Route::prefix('blog')->group(function () {
 Route::get('/sample-rapor', function () { 
     $pdf = Pdf::loadView('rapor.rapor')->setPaper('a4', 'potrait')->setWarnings(false);
     return $pdf->stream();
-    return view('profile.index'); 
 });
 Route::get('/cekangka/{a}', function ($b) {
     $sebutanAngka = [];

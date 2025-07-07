@@ -25,8 +25,8 @@ class BlogController extends Controller
     //
     public function index(){
         
-        $data = Blog::with(['siswa'])->get();
-        return view('blog-kegiatan.index',compact('data'));
+       // $data = Blog::with(['siswa'])->get();
+        return view('profile.index');
     }
 
     

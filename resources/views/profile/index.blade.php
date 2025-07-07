@@ -700,104 +700,76 @@
                             </div>
                         </div> --}}
                     </div>
+                    <style>
+                        .perangkat{
+        
+                            font-family: "Lobster Two", "Helvetica Neue", Helvetica, sans-serif;
+                        }
+                        .perangkat-id{
+                            width: 180px;
+                            height:180px;
+                        }
+                    </style>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item position-relative">
-                            <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-11.jpeg ') }}"
+                            <img class="img-fluid rounded-circle " src="{{ asset('profil/img/guru-11.jpeg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Muthmainnah, M.Pd</h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 style="font-family:Lobster Two">Muthmainnah, M.Pd</h6>
                                 <p>Direktur </p>
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        {{-- <div class="team-item position-relative">
-                            <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-4.jpg ') }}" alt="">
-                            <div class="team-text">
-                                <h3>Hajnah, S.E</h3>
-                                <p>Kepala Sekolah </p>
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div> --}}
+                       
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-4.jpg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Hajnah, S.E</h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 class="perangkat">Hajnah, S.E</h6>
                                 <p>Kepala Sekolah </p>
-                                <div class="d-flex align-items-center">
+                                <!-- <div class="d-flex align-items-center">
                                     <a class="btn btn-square btn-primary mx-1" href=""><i
                                             class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary  mx-1" href=""><i
                                             class="fab fa-twitter"></i></a>
                                     <a class="btn btn-square btn-primary  mx-1" href=""><i
                                             class="fab fa-instagram"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
 
                     {{-- Perangkat Sekolah --}}
                     <div class="col-lg-4 col-md-6 wow fadeInUp ml-2" data-wow-delay="0.1s">
-                        {{-- <div class="team-item position-relative">
-                            <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-1.jpg ') }}" alt="">
-                            <div class="team-text">
-                                <h3>Nurinayah, S.S</h3>
-                                <p>Bendahara</p>
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div> --}}
+                        
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp mr-2" data-wow-delay="0.1s">
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-5.jpeg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Mardiana, S.Pd.I</h3>
+                            <div class="team-text perangkat " style="width:180px; height:180px;">
+                                <h6 class="perangkat">Mardiana, S.Pd.I</h6>
                                 <p>Pembina Tahfidz</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div style="height: 60px;"></div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-1.jpeg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Nurinayah, S.S</h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 class="perangkat">Nurinayah, S.S</h6>
                                 <p>Bendahara</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -806,16 +778,11 @@
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-9.jpeg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Yayu<br> Wahyuni, S.E</h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 class="perangkat">Yayu Wahyuni, S.E</h6>
                                 <p>Tata Usaha</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -824,101 +791,60 @@
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-2.jpeg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Hardianti, S.Sos </h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 class="perangkat">Hardianti, S.Sos </h6>
                                 <p>Humas</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
+                    <div style="height: 60px;"></div>
                     {{-- Guru Biasa --}}
 
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-7.jpeg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Lilis <br>
-                                    Rahmawati, S.Pd</h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 class="perangkat">Lilis 
+                                    Rahmawati, S.Pd</h6>
                                 <p>Ustadzah</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item position-relative">
-                            <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-6.jpg ') }}"
+                            <img class="img-fluid rounded-circle " src="{{ asset('profil/img/guru-6.jpg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Sri Rukaya, S.Sos</h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 class="perangkat">Sri Rukaya, S.Sos</h6>
                                 <p>Ustadzah</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item position-relative">
-                            <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-8.jpeg ') }}"
+                            <img class="img-fluid rounded-circle " src="{{ asset('profil/img/guru-8.jpeg ') }}"
                                 alt="">
-                            <div class="team-text">
-                                <h3>Sita Erlina, S.Pd</h3>
+                            <div class="team-text perangkat" style="width:180px; height:180px;">
+                                <h6 class="perangkat">Sita Erlina, S.Pd</h6>
                                 <p>Ustadzah</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item position-relative">
-                            <img class="img-fluid rounded-circle w-75" src="{{ asset('profil/img/guru-10.jpeg ') }}"
-                                alt="">
-                            <div class="team-text col-sm-12">
-
-                                <h3>Insan Nursyahid Kurniawan, S.Pd</h3>
-                                <p>Ustadz</p>
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                    
                 </div>
             </div>
         </div>
